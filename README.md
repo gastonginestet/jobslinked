@@ -27,4 +27,4 @@ $ rails s
 * Every time a request other than Login or Create User is required, a JWT Token is needed.
 * This token is provided when you make the login request.
 * For example, when you want to make a GET request to know the job alerts, Authorization must appear in the headers with its respective token.
->There is a Postman collection full of examples to test how it works.
+>There is a [Postman](https://documenter.getpostman.com/view/14565721/Tzz4Sfkh) collection full of examples to test how it works.
