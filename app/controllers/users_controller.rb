@@ -16,11 +16,13 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    if params[:role].to_i == 9999
-      @user.role_id = 2
-    else
-      @user.role_id = 3
-    end
+    # To create a company you need to send 
+    # as role code '9999'
+    @user.role_id = if params[:role].to_i == 9999
+                      2
+                    else
+                      3
+                    end
 
     if @user.save
       render json: @user, status: :created
@@ -32,7 +34,9 @@ class UsersController < ApplicationController
 
   # PUT /users/{username}
   def update
-    unless @user.update(user_params)
+    if @user.update(user_params)
+      render json: @user, status: :ok
+    else
       render json: { errors: @user.errors.full_messages },
              status: :unprocessable_entity
     end

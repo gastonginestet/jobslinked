@@ -11,7 +11,6 @@ class FollowsController < ApplicationController
                else
                  Follow.where(follower_id: @current_user.id)
                end
-
     render json: @follows
   end
 

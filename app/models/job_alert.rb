@@ -3,4 +3,7 @@ class JobAlert < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
 
   belongs_to :user
+
+  validates :title, presence: true
+  validates :description, presence: true
 end

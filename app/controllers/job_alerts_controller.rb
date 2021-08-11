@@ -4,7 +4,7 @@ class JobAlertsController < ApplicationController
 
   # GET /job_alerts
   def index
-    @jobalerts = JobAlert.where(user_id: @current_user.id)
+    @jobalerts = JobAlert.all
 
     render json: @jobalerts
   end
@@ -19,7 +19,7 @@ class JobAlertsController < ApplicationController
   # POST /job_alerts
   def create
     authorize! :create, @jobalert || JobAlert
-    @jobalert = JobAlert.new(message:jobalert_params)
+    @jobalert = JobAlert.new(message: jobalert_params)
     @jobalert.user_id = @current_user.id
 
     if @jobalert.save
