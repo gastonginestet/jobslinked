@@ -1,11 +1,12 @@
-# Jobslinked
+# Jobslinked 💼
+It is a Ruby on Rails API for a job board.
 
+### Installation 🔧
 This application runs on the following software:
 
 - Ruby (MRI) 2.7.2
 - Ruby On Rails(API) 6.1.4
 
-### Installation 🔧
 
 Execute
 ``` bash
